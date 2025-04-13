@@ -1,0 +1,150 @@
+/* Общие стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  background-color: #1a1a1a;
+  color: #000;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+  background-color: #f5e2d5;
+  min-height: 100vh;
+}
+
+/* Шапка */
+.header {
+  background-color: #f5e2d5;
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a7c2f;
+}
+.location {
+  font-size: 16px;
+}
+.login-btn {
+  background-color: #b6e3aa;
+  border: 1px solid #4a7c2f;
+  border-radius: 12px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+/* Верхняя панель */
+.top-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.bar-block {
+  flex: 1;
+  height: 50px;
+  background-color: #99c27c;
+  border-radius: 8px;
+}
+
+/* Вкладки */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.tab {
+  padding: 10px 20px;
+  background-color: #e6c9b3;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tab.active {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Карточки */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+.card {
+  background-color: #99c27c;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+}
+.card-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* Модальные окна */
+.modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.modal-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+.modal-box input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.btn {
+  background-color: #4a7c2f;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}

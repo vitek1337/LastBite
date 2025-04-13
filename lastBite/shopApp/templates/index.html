@@ -1,0 +1,66 @@
+<!doctype html>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="menu-Wrapper">
+  <div class="menu-news">
+    <div class="menunews" onclick="openMenuModal('Боксы')">
+      <div class="product-name">Боксы</div>
+    </div>
+    <div class="menunews" onclick="openMenuModal('Продукты')">
+      <div class="product-price">Продукты</div>
+    </div>
+    <div class="menunews" onclick="openMenuModal('Еще...')">
+      <div class="product-price">Еще...</div>
+    </div>
+  </div>
+</div>
+
+<div class="containter_coord">
+    <div class="menuCont" onclick="openProductModal('{{ product.goodName }}', {{ product.price }}, 'Описание товара', '{{ product.goodPic.url }}')">
+      <div class="menunews" onclick="openMenuModal('Еще...')">
+      <div class="product-price">Еще...</div>
+    </div>
+</div>
+
+<h2 style="padding: 20px 30px;">Боксы</h2>
+<div class="products-container">
+  {% for product in products %}
+    <div class="product" onclick="openProductModal('{{ product.goodName }}', {{ product.price }}, 'Описание товара', '{{ product.goodPic.url }}')">
+      {% if product.goodPic %}
+        <img src="{{ product.goodPic.url }}" alt="{{ product.goodName }}">
+      {% else %}
+        <img src="{% static 'no-image.png' %}" alt="Нет фото">
+      {% endif %}
+      <div class="product-name">{{ product.goodName }}</div>
+      <div class="product-price">{{ product.price }} ₽</div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- Модалка товара -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="close" id="closeProductModal">&times;</span>
+    <div style="display: flex; align-items: center;">
+      <img id="productImage" src="" alt="" style="width: 80px; height: 80px; border-radius: 10px; object-fit: cover;">
+      <h3 id="productTitle" style="margin-left: 10px;">Название</h3>
+    </div>
+    <div style="margin-top: 10px;">
+      <b>Описание</b>
+      <p id="productDescription">описание товара, его состав</p>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+      <button id="addToCartBtn" style="background-color: #dcbfa9; border: none; padding: 10px; border-radius: 10px;">Добавить</button>
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
