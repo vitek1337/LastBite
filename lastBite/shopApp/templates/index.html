@@ -4,10 +4,14 @@
 
 
 {% block content %}
+
+
 <div class="menu-Wrapper">
   <div class="menu-news">
     <div class="menunews" onclick="openMenuModal('Боксы')">
-      <div class="product-name">Боксы</div>
+      <div class="product-name">
+        Боксы
+      </div>
     </div>
     <div class="menunews" onclick="openMenuModal('Продукты')">
       <div class="product-price">Продукты</div>
@@ -15,17 +19,14 @@
     <div class="menunews" onclick="openMenuModal('Еще...')">
       <div class="product-price">Еще...</div>
     </div>
+
   </div>
 </div>
 
-<div class="containter_coord">
-    <div class="menuCont" onclick="openProductModal('{{ product.goodName }}', {{ product.price }}, 'Описание товара', '{{ product.goodPic.url }}')">
-      <div class="menunews" onclick="openMenuModal('Еще...')">
-      <div class="product-price">Еще...</div>
-    </div>
-</div>
 
-<h2 style="padding: 20px 30px;">Боксы</h2>
+
+
+<h2 style="padding: 20px 30px;">Продукты</h2>
 <div class="products-container">
   {% for product in products %}
     <div class="product" onclick="openProductModal('{{ product.goodName }}', {{ product.price }}, 'Описание товара', '{{ product.goodPic.url }}')">
